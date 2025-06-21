@@ -72,5 +72,3 @@ This project is for **educational and ethical hacking purposes** only. Use respo
 ## 🧠 Author
 
 Made by Ferrán — for learning, experimenting, and breaking things the right way.
-```
-
