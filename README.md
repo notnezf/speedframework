@@ -1,4 +1,3 @@
-```markdown
 # 🛠️ Pentesting Toolkit (CLI Framework)
 
 Modular and extensible CLI-based toolkit for penetration testing, information gathering, scanning, and brute-force attacks — built in Python for learning and rapid experimentation.
