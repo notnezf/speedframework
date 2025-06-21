@@ -74,12 +74,3 @@ This project is for **educational and ethical hacking purposes** only. Use respo
 Made by Ferrán — for learning, experimenting, and breaking things the right way.
 ```
 
----
-
-### 🔧 Tips
-
-- Crea un archivo `requirements.txt` con:
-```txt
-click
-paramiko
-```
