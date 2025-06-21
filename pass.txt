@@ -1,0 +1,3 @@
+bandit0
+wrongpass
+123456
