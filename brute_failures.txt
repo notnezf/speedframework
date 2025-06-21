@@ -1,0 +1,5 @@
+[SSH] bandit.labs.overthewire.org:22 - bandit0:bandit0
+[SSH] bandit.labs.overthewire.org:22 - bandit0:wrongpass
+[SSH] bandit.labs.overthewire.org:22 - bandit0:123456
+[SSH] bandit.labs.overthewire.org:22 - bandit0:bandit0
+[SSH] bandit.labs.overthewire.org:22 - bandit0:wrongpass

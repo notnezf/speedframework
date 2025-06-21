@@ -10,8 +10,7 @@ from paramiko.ssh_exception import (
     NoValidConnectionsError
 )
 
-from utils.print import info, success, warning, error
-import click
+from utils.print import info, success, warning, error  # ← colores centralizados
 
 
 def port_open(ip: str, port: int, timeout: float = 3.0) -> bool:

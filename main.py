@@ -4,15 +4,8 @@ import core.osint
 import core.scanner
 import utils.logger
 
-title = r"""
-  __  ___ ___ ___ __  ___ ___  __  __ __ ___  _   _  __  ___ _  __ 
-/' _/| _,\ __| __| _\| __| _ \/  \|  V  | __|| | | |/__\| _ \ |/ / 
-`._`.| v_/ _|| _|| v | _|| v / /\ | \_/ | _| | 'V' | \/ | v /   <  
-|___/|_| |___|___|__/|_| |_|_\_||_|_| |_|___|!_/ \_!\__/|_|_\_|\_\ 
-"""
+from utils.print import info, success, warning, error, show_title
 
-def show_title():
-    click.echo(title)
 
 @click.command(help="""
 Modular pentesting tool.
@@ -42,41 +35,43 @@ Example:
               help="Path to password list file")
 @click.option("--port", type=int, help="Custom port to use")
 @click.option("--verbose", is_flag=True, help="Enable verbose output")
-
-
-def menu(mode, type, input, userlist, passlist, verbose):
+def menu(mode, type, input, userlist, passlist, port, verbose):
     show_title()
 
     if mode == "brute":
-        if not type or not input or not userlist or not passlist:
-            click.echo("❌  Para fuerza bruta debes indicar --type, --input, --userlist y --passlist.")
+        if not all([type, input, userlist, passlist]):
+            error("❌ Brute-force mode requires --type, --input, --userlist, and --passlist.")
             return
-        click.echo(f"🔍 Running brute force in {input} (tipo: {type})...")
-        core.brute.run(type, input, userlist, passlist, verbose)
+
+        if port is None:
+            port = 22 if type == "ssh" else 21 if type == "ftp" else 80
+
+        info(f"🔍 Running brute force on {input}:{port} (type: {type})...")
+        core.brute.run(type, input, userlist, passlist, port, verbose)
 
     elif mode == "osint":
         if not type or not input:
-            click.echo("❌  OSINT requires --type y --input.")
+            error("❌ OSINT mode requires --type and --input.")
             return
-        click.echo(f"🕵️ Running osint about {input} (tipo: {type})...")
+        info(f"🕵️ Running OSINT on {input} (type: {type})...")
         core.osint.run(type, input, verbose)
 
     elif mode == "scanner":
         if not type or not input:
-            click.echo("❌  Scanner requires --type y --input.")
+            error("❌ Scanner mode requires --type and --input.")
             return
-        click.echo(f"🔎 Scanning {input} (tipo: {type})...")
+        info(f"🔎 Scanning {input} (type: {type})...")
         core.scanner.run(type, input, verbose)
 
     elif mode == "logger":
         if not type or not input:
-            click.echo("❌  Logger requieres --type y --input.")
+            error("❌ Logger mode requires --type and --input.")
             return
-        click.echo(f"📝 Running logger in {input} (tipo: {type})...")
+        info(f"📝 Running logger on {input} (type: {type})...")
         utils.logger.run(type, input, verbose)
 
     else:
-        click.echo("❌  Invalid mode.")
+        error("❌ Invalid mode.")
 
 if __name__ == "__main__":
     menu()
