@@ -10,10 +10,11 @@ from paramiko.ssh_exception import (
     NoValidConnectionsError
 )
 
-from utils.print import info, success, warning, error  # ← colores centralizados
+from utils.print import info, success, warning, error
+from utils.common import load_list_or_value
 
 
-def port_open(ip: str, port: int, timeout: float = 3.0) -> bool:
+def portOpen(ip: str, port: int, timeout: float = 3.0) -> bool:
     """Returns True if the port is open, False if it is closed/filtered."""
     try:
         with closing(socket.create_connection((ip, port), timeout)):
@@ -22,14 +23,13 @@ def port_open(ip: str, port: int, timeout: float = 3.0) -> bool:
         return False
 
 
-def bruteFTP(ip, userlist, passlist, port=21, verbose=False):
-    if not port_open(ip, port):
+def bruteFtp(ip, userlist, passlist, port=21, verbose=False):
+    if not portOpen(ip, port):
         error(f"❌ {ip}:{port} is not responding on TCP. Is the port correct?")
         return
 
-    with open(userlist) as u, open(passlist) as p:
-        users = u.read().splitlines()
-        pwds = p.read().splitlines()
+    users = load_list_or_value(userlist)
+    pwds  = load_list_or_value(passlist)
 
     if not users or not pwds:
         error("❌ User or password file is empty.")
@@ -57,14 +57,13 @@ def bruteFTP(ip, userlist, passlist, port=21, verbose=False):
             time.sleep(0.2)
 
 
-def bruteSSH(ip, userlist, passlist, port=22, verbose=False):
-    if not port_open(ip, port):
+def bruteSsh(ip, userlist, passlist, port=22, verbose=False):
+    if not portOpen(ip, port):
         error(f"❌ {ip}:{port} is not responding on TCP. Is the port correct?")
         return
 
-    with open(userlist) as u, open(passlist) as p:
-        users = u.read().splitlines()
-        pwds = p.read().splitlines()
+    users = load_list_or_value(userlist)
+    pwds  = load_list_or_value(passlist)
 
     if not users or not pwds:
         error("❌ User or password file is empty.")
@@ -129,9 +128,9 @@ def bruteHttpForm():
 
 def run(type, ip, userlist, passlist, port=None, verbose=False):
     if type == "ftp":
-        bruteFTP(ip, userlist, passlist, port or 21, verbose)
+        bruteFtp(ip, userlist, passlist, port or 21, verbose)
     elif type == "ssh":
-        bruteSSH(ip, userlist, passlist, port or 22, verbose)
+        bruteSsh(ip, userlist, passlist, port or 22, verbose)
     elif type == "http":
         bruteHttpForm()
     else:
