@@ -2,6 +2,15 @@
 
 Modular and extensible CLI-based toolkit for penetration testing, information gathering, scanning, and brute-force attacks — built in Python for learning and rapid experimentation.
 
+![GitHub release downloads](https://img.shields.io/github/downloads/CyberiusCompany/Cyberius-Unzip-Cracker/latest/total)
+![Versión](https://img.shields.io/badge/versión-1.0.0-blue)
+![Sistema](https://img.shields.io/badge/windows-x64-green)
+![Licencia](https://img.shields.io/badge/licencia-Privada-red)
+![Uso](https://img.shields.io/badge/uso-solo%20legal-important)
+![Estado](https://img.shields.io/badge/release-estable-brightgreen)
+![Python](https://img.shields.io/badge/python-3.7%2B-yellow)
+![Interfaz](https://img.shields.io/badge/interfaz-CLI-blue)
+
 ## 🚀 Features
 
 - 🧠 **Modular design**: Brute-force, OSINT, scanning, and logging modes.
