@@ -2,10 +2,13 @@
 from utils.common import loadListOrValue
 from utils.print import warning,info,success,error
 
-## Functions
 
+## Functions
 def scanPortsBasic():
+    
     warning("🌐 Basic scan form module not yet implemented.")
+
+
 def scanPortsNmap():
     warning("🌐 Nmap Scan form module not yet implemented.")
 def detectServices():
