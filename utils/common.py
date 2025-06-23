@@ -2,7 +2,7 @@
 
 import os
 
-def load_list_or_value(value):
+def loadListOrValue(value):
     if os.path.exists(value):
         with open(value) as f:
             return f.read().splitlines()

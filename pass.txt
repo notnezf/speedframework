@@ -1,3 +1,4 @@
+popo5
+contrasena
+password
 bandit0
-wrongpass
-123456

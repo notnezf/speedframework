@@ -1,2 +1,4 @@
+from utils.print import warning,info,success,error
+
 def run(type,input,verbose):
-    pass
+    warning("🌐 OSINT form module not yet implemented.")

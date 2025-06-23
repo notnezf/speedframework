@@ -1,11 +1,20 @@
+
+from utils.common import loadListOrValue
+from utils.print import warning,info,success,error
+
+## Functions
+
 def scanPortsBasic():
-    pass
+    warning("🌐 HTTP form module not yet implemented.")
 def scanPortsNmap():
-    pass
+    warning("🌐 HTTP form module not yet implemented.")
 def detectServices():
-    pass
+    warning("🌐 HTTP form module not yet implemented.")
 def detectWebTech():
-    pass
+    warning("🌐 HTTP form module not yet implemented.")
+
+## Run module
+
 def run(type,input,verbose):
     if type == "basic":
         scanPortsBasic()

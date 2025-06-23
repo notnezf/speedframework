@@ -1,8 +1,3 @@
-bandit.labs.overthewire.org - bandit0:bandit0
-<<<<<<< HEAD
-bandit.labs.overthewire.org - bandit0:bandit0
-=======
 bandit.labs.overthewire.org:2220 - bandit0:bandit0
 bandit.labs.overthewire.org:2220 - bandit0:bandit0
 bandit.labs.overthewire.org:2220 - bandit0:bandit0
->>>>>>> 28bf208 (yes)
