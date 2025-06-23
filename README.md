@@ -1,56 +1,56 @@
 # ⚡ Speedframework
 
-Framework modular de pentesting escrito en Python. Diseñado para automatizar tareas comunes como escaneo de puertos, recolección de información pública (OSINT) y ataques de fuerza bruta.
+Modular pentesting framework written in Python. Designed to automate common tasks such as port scanning, public information gathering (OSINT), and brute-force attacks.
 
 ---
 
-## 🚀 Módulos disponibles
+## 🚀 Available Modules
 
-- 🔍 **Scanner** – Escaneo rápido de puertos TCP/UDP.
-- 🕵️ **OSINT** – Recolección de información pública.
-- 🛠️ **Brute** – Ataques de fuerza bruta contra servicios como FTP, SSH y Telnet.
+- 🔍 **Scanner** – Fast TCP/UDP port scanning.
+- 🕵️ **OSINT** – Public information gathering.
+- 🛠️ **Brute** – Brute-force attacks against services like FTP, SSH, and Telnet.
 
 ---
 
-## 📸 Capturas de pantalla
+## 📸 Screenshots
 
-### Escaneo de puertos
-![Escaneo](assets/screenshots/scan.png)
+### Port Scanning
+![Scan](assets/screenshots/scan.png)
 
-### Fuerza bruta FTP
+### FTP Brute Force
 ![FTP Bruteforce](assets/screenshots/brute_ftp.png)
 
 ---
 
-## 📦 Instalación
+## 📦 Installation
 
 ```bash
-git clone https://github.com/tuusuario/speedframework.git
+git clone https://github.com/yourusername/speedframework.git
 cd speedframework
 pip install -r requirements.txt
 ```
 
 ---
 
-## 🧑‍💻 Uso básico
+## 🧑‍💻 Basic Usage
 
 ```bash
 python3 -m speedframework --module brute --type ssh --ip 192.168.1.10 --userlist config/users.txt --passlist config/pass.txt
 ```
 
-### Parámetros comunes
+### Common Parameters
 
-| Parámetro       | Descripción                          |
-|----------------|--------------------------------------|
-| `--module` / `-m`   | Módulo a ejecutar (`brute`, `scanner`, `osint`) |
-| `--type` / `-t`     | Subtipo dentro del módulo (ej. `ftp`, `ssh`)   |
-| `--ip` / `-i`       | IP o dominio objetivo             |
-| `--userlist` / `-u` | Ruta al diccionario de usuarios   |
-| `--passlist` / `-p` | Ruta al diccionario de contraseñas |
+| Parameter         | Description                                     |
+|------------------|-------------------------------------------------|
+| `--module` / `-m` | Module to run (`brute`, `scanner`, `osint`)     |
+| `--type` / `-t`   | Subtype within the module (e.g., `ftp`, `ssh`)  |
+| `--ip` / `-i`     | Target IP or domain                             |
+| `--userlist` / `-u` | Path to the username dictionary               |
+| `--passlist` / `-p` | Path to the password dictionary               |
 
 ---
 
-## 📁 Estructura del proyecto
+## 📁 Project Structure
 
 ```
 speedframework/
@@ -79,16 +79,16 @@ speedframework/
 ├── LICENSE
 └── README.md
 ```
----
-
-## 🧾 Licencia
-
-MIT License – libre uso y modificación.
 
 ---
 
-## 👤 Autor
+## 🧾 License
 
-Creado por [tu nombre o alias].  
-Proyecto educativo con fines de aprendizaje y experimentación en ciberseguridad.
-```
+MIT License – free to use and modify.
+
+---
+
+## 👤 Author
+
+Created by Ferrán Ortega.  
+Educational project for learning and experimentation in cybersecurity.
