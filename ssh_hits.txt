@@ -1,0 +1,2 @@
+bandit.labs.overthewire.org:2220 - bandit0:bandit0
+bandit.labs.overthewire.org:2220 - bandit0:bandit0

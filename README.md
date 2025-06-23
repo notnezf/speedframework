@@ -18,7 +18,7 @@ Modular pentesting framework written in Python. Designed to automate common task
 ![Scan](assets/screenshots/scan.png)
 
 ### SSH Brute Force
-![SSH Bruteforce](assets/screenshots/brute_ftp.png)
+![SSH Bruteforce](assets/screenshots/brute_ssh.png)
 
 ---
 
