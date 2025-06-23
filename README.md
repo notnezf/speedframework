@@ -1,82 +1,94 @@
-# 🛠️ Pentesting Toolkit (CLI Framework)
+# ⚡ Speedframework
 
-Modular and extensible CLI-based toolkit for penetration testing, information gathering, scanning, and brute-force attacks — built in Python for learning and rapid experimentation.
-
-![GitHub release downloads](https://img.shields.io/github/downloads/CyberiusCompany/Cyberius-Unzip-Cracker/latest/total)
-![Versión](https://img.shields.io/badge/versión-1.0.0-blue)
-![Sistema](https://img.shields.io/badge/windows-x64-green)
-![Licencia](https://img.shields.io/badge/licencia-Privada-red)
-![Uso](https://img.shields.io/badge/uso-solo%20legal-important)
-![Estado](https://img.shields.io/badge/release-estable-brightgreen)
-![Python](https://img.shields.io/badge/python-3.7%2B-yellow)
-![Interfaz](https://img.shields.io/badge/interfaz-CLI-blue)
-
-## 🚀 Features
-
-- 🧠 **Modular design**: Brute-force, OSINT, scanning, and logging modes.
-- 🔐 **Brute-force support**: FTP and SSH (HTTP in progress).
-- 🌐 **Custom port targeting**: Supports non-default ports (e.g. SSH on 2220).
-- 🗂️ **File-based input**: Accepts custom user/password wordlists.
-- 📜 **Verbose output**: Optional logs and detailed result tracking.
-
-## 🧩 Usage
-
-```bash
-python main.py -m <mode> -t <type> -i <target> [options]
-```
-
-### Available Modes
-
-| Mode     | Description                            | Required Options             |
-|----------|----------------------------------------|-------------------------------|
-| `brute`  | Brute-force attack                     | `-t`, `-i`, `-u`, `-p`        |
-| `osint`  | Information gathering                  | `-t`, `-i`                    |
-| `scanner`| Port/service scanning                  | `-t`, `-i`                    |
-| `logger` | Log-related utilities (WIP)            | `-t`, `-i`                    |
-
-### Example: Brute-force SSH
-
-```bash
-python main.py -m brute -t ssh -i bandit.labs.overthewire.org \
--u users.txt -p passwords.txt --port 2220 --verbose
-```
-
-## 📁 File Format
-
-- **Userlist**: One username per line.
-- **Passlist**: One password per line.
-
-## 📦 Requirements
-
-- Python 3.7+
-- Dependencies:
-  - `paramiko` (for SSH)
-  - `click`
-  - `ftplib` (standard)
-
-Install them with:
-
-```bash
-pip install -r requirements.txt
-```
-
-## ✅ Status
-
-| Module    | Status       |
-|-----------|--------------|
-| Brute FTP | ✅ Completed |
-| Brute SSH | ✅ Completed |
-| HTTP Form | ⚙️ In Progress |
-| OSINT     | ⚙️ In Progress |
-| Scanner   | 🔜 Planned    |
-| Logger    | 🔜 Planned    |
-
-## 📄 License
-
-This project is for **educational and ethical hacking purposes** only. Use responsibly.
+Framework modular de pentesting escrito en Python. Diseñado para automatizar tareas comunes como escaneo de puertos, recolección de información pública (OSINT) y ataques de fuerza bruta.
 
 ---
 
-## 🧠 Author
+## 🚀 Módulos disponibles
 
-Made by Ferrán — for learning, experimenting, and breaking things the right way.
+- 🔍 **Scanner** – Escaneo rápido de puertos TCP/UDP.
+- 🕵️ **OSINT** – Recolección de información pública.
+- 🛠️ **Brute** – Ataques de fuerza bruta contra servicios como FTP, SSH y Telnet.
+
+---
+
+## 📸 Capturas de pantalla
+
+### Escaneo de puertos
+![Escaneo](assets/screenshots/scan.png)
+
+### Fuerza bruta FTP
+![FTP Bruteforce](assets/screenshots/brute_ftp.png)
+
+---
+
+## 📦 Instalación
+
+```bash
+git clone https://github.com/tuusuario/speedframework.git
+cd speedframework
+pip install -r requirements.txt
+```
+
+---
+
+## 🧑‍💻 Uso básico
+
+```bash
+python3 -m speedframework --module brute --type ssh --ip 192.168.1.10 --userlist config/users.txt --passlist config/pass.txt
+```
+
+### Parámetros comunes
+
+| Parámetro       | Descripción                          |
+|----------------|--------------------------------------|
+| `--module` / `-m`   | Módulo a ejecutar (`brute`, `scanner`, `osint`) |
+| `--type` / `-t`     | Subtipo dentro del módulo (ej. `ftp`, `ssh`)   |
+| `--ip` / `-i`       | IP o dominio objetivo             |
+| `--userlist` / `-u` | Ruta al diccionario de usuarios   |
+| `--passlist` / `-p` | Ruta al diccionario de contraseñas |
+
+---
+
+## 📁 Estructura del proyecto
+
+```
+speedframework/
+├── speedframework/
+│   ├── core/
+│   │   ├── brute.py
+│   │   ├── osint.py
+│   │   └── scanner.py
+│   ├── utils/
+│   │   ├── common.py
+│   │   ├── logger.py
+│   │   └── print.py
+│   ├── config/
+│   │   ├── users.txt
+│   │   └── pass.txt
+│   └── __main__.py
+├── assets/
+│   └── screenshots/
+│       ├── scan.png
+│       └── brute_ftp.png
+├── tests/
+│   └── test_brute.py
+├── requirements.txt
+├── setup.py
+├── .gitignore
+├── LICENSE
+└── README.md
+
+---
+
+## 🧾 Licencia
+
+MIT License – libre uso y modificación.
+
+---
+
+## 👤 Autor
+
+Creado por [tu nombre o alias].  
+Proyecto educativo con fines de aprendizaje y experimentación en ciberseguridad.
+```
